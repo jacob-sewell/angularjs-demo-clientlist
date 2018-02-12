@@ -1,0 +1,38 @@
+<div ng-controller="ListViewController" class="client-list-wrap container container-fluid">
+    <div class="row">
+        <h1 class="col-8">Clients</h1>
+        <div class="client-list-filter-wrap input-group mb-3 col-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text fa fa-search" id="client-list-quickfilter"></span>
+            </div>
+            <input ng-model="quickfilter" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="client-list-quickfilter">
+        </div>
+    </div>
+    <div class="row">
+        <table class="client-list table table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th><a sort-col="last_name"  update-sort="listView.updateSort()" sorters="listView.sorters" class="btn" role="btn">Last Name</a></th>
+                    <th><a sort-col="first_name" update-sort="listView.updateSort()" sorters="listView.sorters" class="btn" role="btn">First Name</a></th>
+                    <th><a sort-col="dob"        update-sort="listView.updateSort()" sorters="listView.sorters" class="btn" role="btn">Date of Birth</a></th>
+                    <th><a sort-col="height"     update-sort="listView.updateSort()" sorters="listView.sorters" class="btn" role="btn">Height</a></th>
+                    <th><a sort-col="weight"     update-sort="listView.updateSort()" sorters="listView.sorters" class="btn" role="btn">Weight</a></th>
+                    <th><a sort-col="gender"     update-sort="listView.updateSort()" sorters="listView.sorters" class="btn" role="btn">Gender</span></th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody ng-model="listView.clients">
+                <tr ng-repeat="row in listView.clients | orderBy:listView.sorters | filter:quickfilter">
+                    <td>{{ row.last_name }}</td>
+                    <td>{{ row.first_name }}</td>
+                    <td>{{ row.dob | date:"longDate" }}</td>
+                    <td>{{ row.height | number:0 }} cm</td>
+                    <td>{{ row.weight | number:0 }} kg</td>
+                    <td>{{ row.gender }}</td>
+                    <td><a href="#/edit/{{ row.client_id }}" class="btn btn-primary" role="btn">edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

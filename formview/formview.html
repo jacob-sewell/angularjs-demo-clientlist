@@ -1,0 +1,52 @@
+<div class="client-form-wrap container container-fluid">
+  <div class="row">
+    <h1 class="col-12">Edit Client</h1>
+  </div>
+  <form ng-submit="formView.submit()">
+    <div class="row" ng-show="formView.formError">
+      <div class="col-12 alert-danger">
+        <h4>Error:</h4>
+        <p>We're sorry, but we've encountered an error submitting your changes:</p>
+        <pre>{{ formView.formError }}</pre>
+        <p>If this problem persists, please contact your account representative.</p>
+      </div>
+    </div>
+    <div class="row">
+      <label class="col-4">
+        First Name<br>
+        <input ng-model="formView.client.first_name" ng-required="1" type="text" name="first_name">
+      </label>
+      <label class="col-4">
+        Last Name<br>
+        <input ng-model="formView.client.last_name" ng-required="1" type="text" name="last_name">
+      </label>
+      <label class="col-4">
+        Gender<br>
+        <select ng-model="formView.client.gender" ng-required="1" name="gender">
+          <option value="O">Other</option>
+          <option value="F">Female</option>
+          <option value="M">Male</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <label class="col-4">
+        Date of Birth<br>
+        <input ng-model="formView.client.dob" ng-required="1" type="text" name="dob">
+      </label>
+      <label class="col-4">
+        Height (cm)<br>
+        <input ng-model="formView.client.height" ng-required="1" type="text" name="height">
+      </label>
+      <label class="col-4">
+        Weight (kg)<br>
+        <input ng-model="formView.client.weight" ng-required="1" type="text" name="weight">
+      </label>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <input type="submit" name="submit" value="Save Changes">
+      </div>
+    </div>
+  </form>
+</div>

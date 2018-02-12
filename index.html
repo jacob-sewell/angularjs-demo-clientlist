@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="clientList" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="clientList" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="clientList" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="clientList" class="no-js"> <!--<![endif]-->
+<head>
+  <title>Client List</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link href="resources/css/clientlist.css" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="AngularJS demonstration by Jacob Sewell (jasewell(at)gmail.com), February 2018">
+  <link rel="stylesheet" href="resources/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="resources/html5-boilerplate/dist/css/main.css">
+  <script src="resources/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div ng-view></div>
+
+  <script src="resources/angular/angular.js"></script>
+  <script src="resources/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="listview/listview.js"></script>
+  <script src="formview/formview.js"></script>
+  <script src="components/sortcol/sortcol.js"></script>
+  <script src="components/sortcol/sortcol-directive.js"></script>
+</body>
+</html>
